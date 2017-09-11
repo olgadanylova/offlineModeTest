@@ -786,7 +786,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/backendless",
-					"$(PROJECT_DIR)/ios/backendless",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -803,7 +802,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/backendless",
-					"$(PROJECT_DIR)/ios/backendless",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
