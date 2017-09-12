@@ -9,6 +9,10 @@
 - (IBAction)addNewAddressSync:(id)sender;
 - (IBAction)updateFirstPersonSync:(id)sender;
 - (IBAction)updateFirstAddressSync:(id)sender;
+- (IBAction)removePersonSync:(id)sender;
+- (IBAction)removeAddressSync:(id)sender;
+- (IBAction)removePersonByIdSync:(id)sender;
+- (IBAction)removeAddressByIdSync:(id)sender;
 
 - (IBAction)findAsync:(id)sender;
 - (IBAction)findQueryAsync:(id)sender;

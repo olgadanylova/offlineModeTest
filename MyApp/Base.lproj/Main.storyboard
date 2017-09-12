@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anK-Iu-sD9">
-                                <rect key="frame" x="123.5" y="50" width="127" height="30"/>
+                                <rect key="frame" x="124" y="50" width="127" height="30"/>
                                 <state key="normal" title="Find + Query Sync"/>
                                 <connections>
                                     <action selector="findQuerySync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fTs-yQ-x0H"/>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX3-5w-q1a">
-                                <rect key="frame" x="101.5" y="140" width="171" height="30"/>
+                                <rect key="frame" x="102" y="140" width="171" height="30"/>
                                 <state key="normal" title="Update first Person Sync"/>
                                 <connections>
                                     <action selector="updateFirstPersonSync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HLf-0y-8l8"/>
@@ -63,46 +63,74 @@
                                     <action selector="updateFirstAddressSync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqk-p8-Qnh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pve-D1-NVu">
+                                <rect key="frame" x="115" y="200" width="145" height="30"/>
+                                <state key="normal" title="Remove Person Sync"/>
+                                <connections>
+                                    <action selector="removePersonSync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3KF-g9-rbs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="172-uc-uT3">
+                                <rect key="frame" x="111" y="230" width="153" height="30"/>
+                                <state key="normal" title="Remove Address Sync"/>
+                                <connections>
+                                    <action selector="removeAddressSync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbW-bW-hDl"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qI-ZV-2Dl">
-                                <rect key="frame" x="149" y="208" width="76" height="30"/>
+                                <rect key="frame" x="150" y="328" width="76" height="30"/>
                                 <state key="normal" title="Find Async"/>
                                 <connections>
                                     <action selector="findAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LxL-qG-XWb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQv-Xb-faa">
-                                <rect key="frame" x="119.5" y="238" width="135" height="30"/>
+                                <rect key="frame" x="120" y="358" width="135" height="30"/>
                                 <state key="normal" title="Find + Query Async"/>
                                 <connections>
                                     <action selector="findQueryAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7IC-Wq-GGp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-D7-nQh">
-                                <rect key="frame" x="108.5" y="268" width="157" height="30"/>
+                                <rect key="frame" x="109" y="388" width="157" height="30"/>
                                 <state key="normal" title="Add new Person Async"/>
                                 <connections>
                                     <action selector="addNewPersonAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JLQ-cN-OWx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib8-AH-30W">
-                                <rect key="frame" x="104.5" y="298" width="165" height="30"/>
+                                <rect key="frame" x="105" y="418" width="165" height="30"/>
                                 <state key="normal" title="Add new address Async"/>
                                 <connections>
                                     <action selector="addNewAddressAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Smf-zZ-VIZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHK-z8-VW3">
-                                <rect key="frame" x="97.5" y="328" width="179" height="30"/>
+                                <rect key="frame" x="98" y="448" width="179" height="30"/>
                                 <state key="normal" title="Update first Person Async"/>
                                 <connections>
                                     <action selector="updateFirstPersonAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A24-Md-4jP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paS-eG-WPt">
-                                <rect key="frame" x="95" y="358" width="184" height="30"/>
+                                <rect key="frame" x="96" y="478" width="184" height="30"/>
                                 <state key="normal" title="Update first address async"/>
                                 <connections>
                                     <action selector="updateFirstAddressAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdK-gM-8Yv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKB-55-y6k">
+                                <rect key="frame" x="96" y="260" width="182" height="30"/>
+                                <state key="normal" title="Remove Person by Id Sync"/>
+                                <connections>
+                                    <action selector="removePersonByIdSync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ou-Ih-v7w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZG7-WK-yGb">
+                                <rect key="frame" x="92" y="290" width="191" height="30"/>
+                                <state key="normal" title="Remove Address by Id Sync"/>
+                                <connections>
+                                    <action selector="removeAddressByIdSync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1D-qd-e6e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,8 +138,11 @@
                         <constraints>
                             <constraint firstItem="paS-eG-WPt" firstAttribute="top" secondItem="tHK-z8-VW3" secondAttribute="bottom" id="00q-ju-ZB0"/>
                             <constraint firstItem="fbt-wh-I8E" firstAttribute="top" secondItem="EX3-5w-q1a" secondAttribute="bottom" id="0iv-X8-JCR"/>
+                            <constraint firstItem="Pve-D1-NVu" firstAttribute="top" secondItem="fbt-wh-I8E" secondAttribute="bottom" id="1gQ-QW-AM1"/>
+                            <constraint firstItem="8qI-ZV-2Dl" firstAttribute="top" secondItem="ZG7-WK-yGb" secondAttribute="bottom" constant="8" symbolic="YES" id="2rX-E6-dC5"/>
                             <constraint firstItem="lgd-D7-nQh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5wc-fN-xsT"/>
                             <constraint firstItem="fbt-wh-I8E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7S6-dM-8JR"/>
+                            <constraint firstItem="ZG7-WK-yGb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bt2-ek-Iwq"/>
                             <constraint firstItem="V2b-xf-mmD" firstAttribute="top" secondItem="anK-Iu-sD9" secondAttribute="bottom" id="Cbq-KT-S7q"/>
                             <constraint firstItem="anK-Iu-sD9" firstAttribute="top" secondItem="v07-Lz-fND" secondAttribute="bottom" id="EBU-jI-o9H"/>
                             <constraint firstItem="Ib8-AH-30W" firstAttribute="top" secondItem="lgd-D7-nQh" secondAttribute="bottom" id="Ej5-Hc-ze7"/>
@@ -122,15 +153,20 @@
                             <constraint firstItem="Ib8-AH-30W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Je3-I6-9ov"/>
                             <constraint firstItem="rQv-Xb-faa" firstAttribute="top" secondItem="8qI-ZV-2Dl" secondAttribute="bottom" id="Ns9-N4-zea"/>
                             <constraint firstItem="anK-Iu-sD9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pdu-Q2-4kj"/>
+                            <constraint firstItem="172-uc-uT3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SmN-A2-bw4"/>
                             <constraint firstItem="EX3-5w-q1a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UrH-5c-fPJ"/>
+                            <constraint firstItem="zKB-55-y6k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YHB-zq-cda"/>
                             <constraint firstItem="v07-Lz-fND" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aeO-zh-sMd"/>
                             <constraint firstItem="rQv-Xb-faa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cOJ-N5-8XQ"/>
                             <constraint firstItem="v07-Lz-fND" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cvl-by-dH6"/>
+                            <constraint firstItem="Pve-D1-NVu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dzO-BE-0Hu"/>
                             <constraint firstItem="GPy-mJ-IhH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eib-mI-caq"/>
                             <constraint firstItem="tHK-z8-VW3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fLw-3n-8Gi"/>
-                            <constraint firstItem="8qI-ZV-2Dl" firstAttribute="top" secondItem="fbt-wh-I8E" secondAttribute="bottom" constant="8" id="iIP-Ef-w9o"/>
+                            <constraint firstItem="ZG7-WK-yGb" firstAttribute="top" secondItem="zKB-55-y6k" secondAttribute="bottom" id="g9m-hq-4B5"/>
                             <constraint firstItem="lgd-D7-nQh" firstAttribute="top" secondItem="rQv-Xb-faa" secondAttribute="bottom" id="iN7-rg-tXv"/>
+                            <constraint firstItem="172-uc-uT3" firstAttribute="top" secondItem="Pve-D1-NVu" secondAttribute="bottom" id="jpl-Eh-BGU"/>
                             <constraint firstItem="EX3-5w-q1a" firstAttribute="top" secondItem="GPy-mJ-IhH" secondAttribute="bottom" id="jqf-qM-sOi"/>
+                            <constraint firstItem="zKB-55-y6k" firstAttribute="top" secondItem="172-uc-uT3" secondAttribute="bottom" id="k6f-Mt-huj"/>
                             <constraint firstItem="paS-eG-WPt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vRp-eK-uoh"/>
                         </constraints>
                     </view>

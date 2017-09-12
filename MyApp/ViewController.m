@@ -135,6 +135,57 @@
     }
 }
 
+- (IBAction)removePersonSync:(id)sender {
+    personArray = [personStore find];
+    if ([personArray count] > 0) {
+        Person *first = [personArray firstObject];
+        [personStore remove:first];
+        NSLog(@"First person removed");
+    }
+    else {
+        printf("No person can be removed\n");
+    }
+}
+
+- (IBAction)removeAddressSync:(id)sender {
+    addressArray = [addressStore find];
+    if ([addressArray count] > 0) {
+        NSDictionary *first = [addressArray firstObject];
+        [addressStore remove: first];
+        NSLog(@"Firstaddress removed");
+    }
+    else {
+        printf("No address can be removed\n");
+    }
+}
+
+- (IBAction)removePersonByIdSync:(id)sender {
+    personArray = [personStore find];
+    if ([personArray count] > 0) {
+        Person *first = [personArray firstObject];
+        NSString *objectId = ((BackendlessEntity *)first).objectId;
+        [personStore removeById:objectId];
+        NSLog(@"Person removed: %@", objectId);
+    }
+    else {
+        printf("No person can be removed\n");
+    }
+}
+
+- (IBAction)removeAddressByIdSync:(id)sender {
+    addressArray = [addressStore find];
+    if ([addressArray count] > 0) {
+        NSDictionary *first = [addressArray firstObject];
+        NSString *objectId = [first valueForKey:@"objectId"];
+        [addressStore removeById:objectId];
+        NSLog(@"Address removed: %@", objectId);
+    }
+    else {
+        printf("No address can be removed\n");
+    }
+
+}
+
 // ***** ASYNC *****
 
 - (IBAction)findAsync:(id)sender {
