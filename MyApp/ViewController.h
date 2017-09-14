@@ -20,5 +20,9 @@
 - (IBAction)addNewAddressAsync:(id)sender;
 - (IBAction)updateFirstPersonAsync:(id)sender;
 - (IBAction)updateFirstAddressAsync:(id)sender;
+- (IBAction)removePersonAsync:(id)sender;
+- (IBAction)removeAddressAsync:(id)sender;
+- (IBAction)removePersonByIdAsync:(id)sender;
+- (IBAction)removeAddressByIdAsync:(id)sender;
 
 @end

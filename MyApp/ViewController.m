@@ -74,7 +74,6 @@
     for (NSDictionary *address in addressArray) {
         NSString *city = [address valueForKey:@"city"];
         NSString *country = [address valueForKey:@"country"];
-        
         printf("%s: %s\n", [city UTF8String], [country UTF8String]);
     }
 }
@@ -140,7 +139,7 @@
     if ([personArray count] > 0) {
         Person *first = [personArray firstObject];
         [personStore remove:first];
-        NSLog(@"First person removed");
+        printf("First person removed\n");
     }
     else {
         printf("No person can be removed\n");
@@ -152,7 +151,7 @@
     if ([addressArray count] > 0) {
         NSDictionary *first = [addressArray firstObject];
         [addressStore remove: first];
-        NSLog(@"Firstaddress removed");
+        printf("First address removed\n");
     }
     else {
         printf("No address can be removed\n");
@@ -165,7 +164,7 @@
         Person *first = [personArray firstObject];
         NSString *objectId = ((BackendlessEntity *)first).objectId;
         [personStore removeById:objectId];
-        NSLog(@"Person removed: %@", objectId);
+        printf("Person removed: %s\n", [objectId UTF8String]);
     }
     else {
         printf("No person can be removed\n");
@@ -178,12 +177,11 @@
         NSDictionary *first = [addressArray firstObject];
         NSString *objectId = [first valueForKey:@"objectId"];
         [addressStore removeById:objectId];
-        NSLog(@"Address removed: %@", objectId);
+        printf("Address removed: %s\n", [objectId UTF8String]);
     }
     else {
         printf("No address can be removed\n");
     }
-
 }
 
 // ***** ASYNC *****
@@ -314,6 +312,76 @@
     }
     else {
         printf("No address can be updated\n");
+    }
+}
+
+- (IBAction)removePersonAsync:(id)sender {
+    personArray = [personStore find];
+    if ([personArray count] > 0) {
+        Person *first = [personArray firstObject];
+        [personStore remove:first
+                   response:^(NSNumber *result) {
+                       printf("First person removed\n");
+                   }
+                      error:^(Fault *fault) {
+                          printf("Fault: %s", [fault.message UTF8String]);
+                      }];
+    }
+    else {
+        printf("No person can be removed\n");
+    }
+}
+
+- (IBAction)removeAddressAsync:(id)sender {
+    addressArray = [addressStore find];
+    if ([addressArray count] > 0) {
+        NSDictionary *first = [addressArray firstObject];
+        [addressStore remove:first
+                    response:^(NSNumber *result) {
+                        printf("First address removed\n");
+                    }
+                       error:^(Fault *fault) {
+                           printf("Fault: %s", [fault.message UTF8String]);
+                       }];
+    }
+    else {
+        printf("No address can be removed\n");
+    }
+}
+
+- (IBAction)removePersonByIdAsync:(id)sender {
+    personArray = [personStore find];
+    if ([personArray count] > 0) {
+        Person *first = [personArray firstObject];
+        NSString *objectId = ((BackendlessEntity *)first).objectId;
+        [personStore removeById:objectId
+                       response:^(NSNumber *result) {
+                           printf("Person removed: %s\n", [objectId UTF8String]);
+                       }
+                          error:^(Fault *fault) {
+                              printf("Fault: %s", [fault.message UTF8String]);
+                          }];
+    }
+    else {
+        printf("No person can be removed\n");
+    }
+}
+
+- (IBAction)removeAddressByIdAsync:(id)sender {
+    addressArray = [addressStore find];
+    if ([addressArray count] > 0) {
+        NSDictionary *first = [addressArray firstObject];
+        NSString *objectId = [first valueForKey:@"objectId"];
+        [addressStore removeById:objectId
+                        response:^(NSNumber *result) {
+                            printf("Address removed: %s\n", [objectId UTF8String]);
+                        }
+                           error:^(Fault *fault) {
+                               printf("Fault: %s", [fault.message UTF8String]);
+                           }];
+    }
+    else {
+        printf("No address can be removed\n");
     }
 }
 
