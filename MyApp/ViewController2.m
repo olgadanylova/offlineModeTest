@@ -57,7 +57,7 @@
                      printf("%s: %i\n", [person.name UTF8String], person.age);
                  }
                     error:^(Fault *fault) {
-                        printf("Fault: %s", [fault.message UTF8String]);
+                        printf("Fault: %s\n", [fault.message UTF8String]);
                     }];
     
     NSString *addressId = @"39BF94B3-9E2A-5460-FF82-D700E621EF00";
@@ -69,7 +69,7 @@
                       printf("%s: %s\n", [city UTF8String], [country UTF8String]);
                   }
                      error:^(Fault *fault) {
-                         printf("Fault: %s", [fault.message UTF8String]);
+                         printf("Fault: %s\n", [fault.message UTF8String]);
                      }];
     
 }
@@ -101,13 +101,13 @@
     [personStore getObjectCount:^(NSNumber *count) {
         printf("*** PERSON COUNT = %s ***\n", [[count stringValue] UTF8String]);
     } error:^(Fault *fault) {
-        printf("Fault: %s", [fault.message UTF8String]);
+        printf("Fault: %s\n", [fault.message UTF8String]);
     }];
     
     [addressStore getObjectCount:^(NSNumber *count) {
         printf("*** ADDRESS COUNT = %s ***\n", [[count stringValue] UTF8String]);
     } error:^(Fault *fault) {
-        printf("Fault: %s", [fault.message UTF8String]);
+        printf("Fault: %s\n", [fault.message UTF8String]);
     }];
 }
 
@@ -126,7 +126,7 @@
                        response:^(NSNumber *count) {
                            printf("*** PERSON WHERE AGE > 10 COUNT = %s ***\n", [[count stringValue] UTF8String]);
                        } error:^(Fault *fault) {
-                           printf("Fault: %s", [fault.message UTF8String]);
+                           printf("Fault: %s\n", [fault.message UTF8String]);
                        }];
     
     [addressStore getObjectCount:[[DataQueryBuilder new] setWhereClause:@"country = 'US'"]
@@ -134,14 +134,60 @@
                             printf("*** ADDRESS WHERE COUNTRY = US = %s ***\n", [[count stringValue] UTF8String]);
                         }
                            error:^(Fault *fault) {
-                               printf("Fault: %s", [fault.message UTF8String]);
+                               printf("Fault: %s\n", [fault.message UTF8String]);
                            }];
+}
 
+- (IBAction)findFirstSync:(id)sender {
+    Person *firstPerson = [personStore findFirst];
+    printf("FIRST PERSON IS %s: %i\n", [firstPerson.name UTF8String], firstPerson.age);
     
+    NSDictionary *firstAddress = [addressStore findFirst];
+    NSString *city = [firstAddress valueForKey:@"city"];
+    NSString *country = [firstAddress valueForKey:@"country"];
+    printf("FIRST ADDRESS IS %s: %s\n", [city UTF8String], [country UTF8String]);
+}
+
+- (IBAction)findLastSync:(id)sender {
+    Person *lastPerson = [personStore findLast];
+    printf("LAST PERSON IS %s: %i\n", [lastPerson.name UTF8String], lastPerson.age);
     
-    //printf("*** PERSON WHERE AGE > 10 COUNT = %s ***\n", [[[personStore getObjectCount:queryBuilder] stringValue] UTF8String]);
-    [queryBuilder setWhereClause:@"country = 'US'"];
-    //printf("*** ADDRESS WHERE COUNTRY = US COUNT = %s ***\n", [[[addressStore getObjectCount:queryBuilder] stringValue] UTF8String]);
+    NSDictionary *lastAddress = [addressStore findLast];
+    NSString *city = [lastAddress valueForKey:@"city"];
+    NSString *country = [lastAddress valueForKey:@"country"];
+    printf("LAST ADDRESS IS %s: %s\n", [city UTF8String], [country UTF8String]);
+}
+
+- (IBAction)findFirstAsync:(id)sender {
+    [personStore findFirst:^(Person *firstPerson) {
+        printf("FIRST PERSON IS %s: %i\n", [firstPerson.name UTF8String], firstPerson.age);
+    } error:^(Fault *fault) {
+        printf("Fault: %s\n", [fault.message UTF8String]);
+    }];
+    
+    [addressStore findFirst:^(NSDictionary *firstAddress) {
+        NSString *city = [firstAddress valueForKey:@"city"];
+        NSString *country = [firstAddress valueForKey:@"country"];
+        printf("FIRST ADDRESS IS %s: %s\n", [city UTF8String], [country UTF8String]);
+    } error:^(Fault *fault) {
+        printf("Fault: %s\n", [fault.message UTF8String]);
+    }];
+}
+
+- (IBAction)findLastAsync:(id)sender {
+    [personStore findLast:^(Person *lastPerson) {
+        printf("LAST PERSON IS %s: %i\n", [lastPerson.name UTF8String], lastPerson.age);
+    } error:^(Fault *fault) {
+        printf("Fault: %s\n", [fault.message UTF8String]);
+    }];
+    
+    [addressStore findLast:^(NSDictionary *lastAddress) {
+        NSString *city = [lastAddress valueForKey:@"city"];
+        NSString *country = [lastAddress valueForKey:@"country"];
+        printf("LAST ADDRESS IS %s: %s\n", [city UTF8String], [country UTF8String]);
+    } error:^(Fault *fault) {
+        printf("Fault: %s\n", [fault.message UTF8String]);
+    }];
 }
 
 @end

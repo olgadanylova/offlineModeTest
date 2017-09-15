@@ -48,7 +48,9 @@
     personArray = [personStore find];
     for (Person *person in personArray) {
         printf("%s: %i\n", [person.name UTF8String], person.age);
+        NSLog(@"p created: %@", ((BackendlessEntity *)person).created);
     }
+
     
     printf("*** ADDRESS ***\n");
     addressArray = [addressStore find];

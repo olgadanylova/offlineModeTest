@@ -12,5 +12,9 @@
 - (IBAction)getObjectCountAsync:(id)sender;
 - (IBAction)getObjectCoutQuerySync:(id)sender;
 - (IBAction)getObjectCountQueryAsync:(id)sender;
+- (IBAction)findFirstSync:(id)sender;
+- (IBAction)findLastSync:(id)sender;
+- (IBAction)findFirstAsync:(id)sender;
+- (IBAction)findLastAsync:(id)sender;
 
 @end

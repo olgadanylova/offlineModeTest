@@ -288,21 +288,57 @@
                                     <action selector="getObjectCountQueryAsync:" destination="iCu-Lc-f27" eventType="touchUpInside" id="AMZ-Oi-vu8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2b-Ys-fp6">
+                                <rect key="frame" x="136" y="304" width="102" height="30"/>
+                                <state key="normal" title="Find First Sync"/>
+                                <connections>
+                                    <action selector="findFirstSync:" destination="iCu-Lc-f27" eventType="touchUpInside" id="Z0B-hi-n4y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yq-G9-vXW">
+                                <rect key="frame" x="136.5" y="334" width="101" height="30"/>
+                                <state key="normal" title="Find Last Sync"/>
+                                <connections>
+                                    <action selector="findLastSync:" destination="iCu-Lc-f27" eventType="touchUpInside" id="bEz-RC-hJg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjy-I0-GcE">
+                                <rect key="frame" x="132.5" y="364" width="109" height="30"/>
+                                <state key="normal" title="Find First Async"/>
+                                <connections>
+                                    <action selector="findFirstAsync:" destination="iCu-Lc-f27" eventType="touchUpInside" id="8s6-K7-1A6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ieo-hz-1fV">
+                                <rect key="frame" x="132.5" y="394" width="109" height="30"/>
+                                <state key="normal" title="Find Last Async"/>
+                                <connections>
+                                    <action selector="findLastAsync:" destination="iCu-Lc-f27" eventType="touchUpInside" id="iQw-E2-NYH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UXW-Pk-xPE" firstAttribute="top" secondItem="GzX-WG-P8Y" secondAttribute="bottom" id="28z-2W-Ky6"/>
                             <constraint firstItem="UXW-Pk-xPE" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="3C4-IT-aC0"/>
+                            <constraint firstItem="J2b-Ys-fp6" firstAttribute="top" secondItem="QKn-gw-Nhr" secondAttribute="bottom" id="3EO-gW-JFV"/>
                             <constraint firstItem="QKn-gw-Nhr" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="7Gd-gb-SvD"/>
+                            <constraint firstItem="Ieo-hz-1fV" firstAttribute="top" secondItem="mjy-I0-GcE" secondAttribute="bottom" id="8Re-lH-wKw"/>
                             <constraint firstItem="GzX-WG-P8Y" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="AVO-Xc-uyG"/>
                             <constraint firstItem="8dE-LB-Fek" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="AbC-7U-4NN"/>
+                            <constraint firstItem="Ieo-hz-1fV" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="F5w-rr-LaF"/>
                             <constraint firstItem="M2U-lc-pnV" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="Fth-14-6mE"/>
+                            <constraint firstItem="2Yq-G9-vXW" firstAttribute="top" secondItem="J2b-Ys-fp6" secondAttribute="bottom" id="Glv-Tr-5ht"/>
                             <constraint firstItem="lTT-Go-cpb" firstAttribute="top" secondItem="8dE-LB-Fek" secondAttribute="bottom" id="HyQ-5c-jMS"/>
                             <constraint firstItem="8dE-LB-Fek" firstAttribute="top" secondItem="M2U-lc-pnV" secondAttribute="bottom" id="R7J-CT-B1g"/>
                             <constraint firstItem="KLP-29-SBE" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="SNK-cU-Aeu"/>
                             <constraint firstItem="lTT-Go-cpb" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="W4E-AV-GGq"/>
+                            <constraint firstItem="mjy-I0-GcE" firstAttribute="top" secondItem="2Yq-G9-vXW" secondAttribute="bottom" id="XdM-2e-f1B"/>
+                            <constraint firstItem="J2b-Ys-fp6" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="Yda-SS-x9Q"/>
                             <constraint firstItem="M2U-lc-pnV" firstAttribute="top" secondItem="UXW-Pk-xPE" secondAttribute="bottom" id="Yi2-Xh-Wrk"/>
                             <constraint firstItem="tZ7-Ck-W3x" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="ZmS-zn-uts"/>
+                            <constraint firstItem="2Yq-G9-vXW" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="cG5-k2-6Ec"/>
+                            <constraint firstItem="mjy-I0-GcE" firstAttribute="centerX" secondItem="izz-8f-K7q" secondAttribute="centerX" id="kJe-lb-4iQ"/>
                             <constraint firstItem="QKn-gw-Nhr" firstAttribute="top" secondItem="KLP-29-SBE" secondAttribute="bottom" id="poz-De-jKq"/>
                             <constraint firstItem="KLP-29-SBE" firstAttribute="top" secondItem="tZ7-Ck-W3x" secondAttribute="bottom" id="sq3-4R-Kif"/>
                             <constraint firstItem="GzX-WG-P8Y" firstAttribute="top" secondItem="fbO-Mo-aPo" secondAttribute="bottom" id="uVo-Py-2iX"/>
