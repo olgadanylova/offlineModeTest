@@ -27,18 +27,33 @@
     addressArray = [NSArray<NSDictionary *> new];
     
     personStore = [backendless.data of:[Person class]];
-    [personStore enableOffline:^() {
-        printf("Table 'Person' sync compete\n");
-    } error:^(Fault *fault) {
-        printf("%s\n", [fault.message UTF8String]);
-    }];
+    [personStore enableOffline];
+    [personStore on:@"sync"
+           response:^(BOOL syncComplete) {
+               if (syncComplete) {
+                   printf("Table 'Person' sync compete\n");
+               }
+               else {
+                   printf("Table 'Person' sync failed\n");
+               }
+           } error:^(Fault *fault) {
+               printf("%s\n", [fault.message UTF8String]);
+           }];
     
     addressStore = [backendless.data ofTable:@"Address"];
-    [addressStore enableOffline:^() {
-        printf("Table 'Address' sync compete\n");
-    } error:^(Fault *fault) {
-        printf("%s\n", [fault.message UTF8String]);
-    }];
+    [addressStore enableOffline];
+    [addressStore on:@"sync"
+            response:^(BOOL syncComplete) {
+                if (syncComplete) {
+                    printf("Table 'Address' sync compete\n");
+                }
+                else {
+                    printf("Table 'Address' sync failed\n");
+                }
+                
+            } error:^(Fault *fault) {
+                printf("%s\n", [fault.message UTF8String]);
+            }];
 }
 
 // ***** SYNC *****
@@ -48,7 +63,6 @@
     personArray = [personStore find];
     for (Person *person in personArray) {
         printf("%s: %i\n", [person.name UTF8String], person.age);
-        NSLog(@"p created: %@", ((BackendlessEntity *)person).created);
     }
 
     

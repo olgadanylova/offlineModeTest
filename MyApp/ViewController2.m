@@ -20,28 +20,42 @@
     addressArray = [NSArray<NSDictionary *> new];
     
     personStore = [backendless.data of:[Person class]];
-    [personStore enableOffline:^() {
-        printf("Table 'Person' sync compete\n");
-    } error:^(Fault *fault) {
-        printf("%s\n", [fault.message UTF8String]);
-    }];
+    [personStore enableOffline];
+    [personStore on:@"sync"
+           response:^(BOOL syncComplete) {
+               if (syncComplete) {
+                   printf("Table 'Person' sync compete\n");
+               }
+               else {
+                   printf("Table 'Person' sync failed\n");
+               }
+           } error:^(Fault *fault) {
+               printf("%s\n", [fault.message UTF8String]);
+           }];
     
     addressStore = [backendless.data ofTable:@"Address"];
-    [addressStore enableOffline:^() {
-        printf("Table 'Address' sync compete\n");
-    } error:^(Fault *fault) {
-        printf("%s\n", [fault.message UTF8String]);
-    }];
-    
+    [addressStore enableOffline];
+    [addressStore on:@"sync"
+            response:^(BOOL syncComplete) {
+                if (syncComplete) {
+                    printf("Table 'Address' sync compete\n");
+                }
+                else {
+                    printf("Table 'Address' sync failed\n");
+                }
+
+            } error:^(Fault *fault) {
+                printf("%s\n", [fault.message UTF8String]);
+            }];    
 }
 
 - (IBAction)findByIdSync:(id)sender {
-    NSString *personId = @"8F40161F-9DCA-77AA-FF97-66762BCC9000";
+    NSString *personId = @"ED75F3E8-7FDC-9CB5-FF3B-F3B8731B2B00";
     printf("*** PERSON WITH ID = %s ***\n", [personId UTF8String]);
     Person *person = [personStore findById:personId];
     printf("%s: %i\n", [person.name UTF8String], person.age);
     
-    NSString *addressId = @"39BF94B3-9E2A-5460-FF82-D700E621EF00";
+    NSString *addressId = @"3676FFE0-E2E6-F31D-FF32-A09022F17800";
     printf("*** ADDRESS WITH ID = %s ***\n", [addressId UTF8String]);
     NSDictionary *address = [addressStore findById:addressId];
     NSString *city = [address valueForKey:@"city"];
@@ -50,7 +64,7 @@
 }
 
 - (IBAction)findByIdAsync:(id)sender {
-    NSString *personId = @"8F40161F-9DCA-77AA-FF97-66762BCC9000";
+    NSString *personId = @"ED75F3E8-7FDC-9CB5-FF3B-F3B8731B2B00";
     [personStore findById:personId
                  response:^(Person *person) {
                      printf("*** PERSON WITH ID = %s ***\n", [personId UTF8String]);
@@ -60,7 +74,7 @@
                         printf("Fault: %s\n", [fault.message UTF8String]);
                     }];
     
-    NSString *addressId = @"39BF94B3-9E2A-5460-FF82-D700E621EF00";
+    NSString *addressId = @"3676FFE0-E2E6-F31D-FF32-A09022F17800";
     [addressStore findById:addressId
                   response:^(NSDictionary *address) {
                       printf("*** ADDRESS WITH ID = %s ***\n", [addressId UTF8String]);
